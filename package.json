@@ -1,0 +1,34 @@
+{
+  "name": "monkberry-standalone",
+  "version": "4.0.0",
+  "description": "Standalone build of Monkberry for use in browsers.",
+  "main": "compiler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monkberry/standalone.git"
+  },
+  "keywords": [
+    "monkberry"
+  ],
+  "author": "Anton Medvedev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monkberry/standalone/issues"
+  },
+  "homepage": "https://github.com/monkberry/standalone#readme",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "monkberry": "^3.8.2",
+    "webpack": "^1.13.1"
+  }
+}
