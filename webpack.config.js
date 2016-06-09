@@ -7,7 +7,6 @@ module.exports = {
     filename: 'monkberry.min.js',
     libraryTarget: 'umd'
   },
-  devtool: 'source-map',
   module: {
     loaders: [
       {
