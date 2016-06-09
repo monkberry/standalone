@@ -5,6 +5,21 @@
     <title>Monkberry Standalone</title>
 </head>
 <body>
-    <script src="compiler.js"></script>
+<script src="monkberry.min.js"></script>
+<script type="text/monkberry" id="component">
+        <h1>
+            Hello, {{ name }}!
+        </h1>
+</script>
+<div data-monkberry="app">
+    <component name="world"></component>
+    <p>This is {{ name || 'noname' }}.</p>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var view = Monkberry.getView('app');
+        view.update({name: 'Anton'});
+    });
+</script>
 </body>
 </html>
