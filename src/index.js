@@ -55,11 +55,7 @@ function getView(name) {
 
 function load() {
   if (document.readyState == 'complete' || document.readyState == 'interactive') {
-    try {
-      register();
-    } catch (e) {
-      console.error(e.toString());
-    }
+    register();
   }
 }
 
