@@ -6,20 +6,54 @@
 </head>
 <body>
 <script src="monkberry.min.js"></script>
-<script type="text/monkberry" id="component">
-        <h1>
-            Hello, {{ name }}!
-        </h1>
+<script type="text/monkberry" id="todos">
+    <ol>
+        {% for i, todo of todos %}
+            <li>
+                <input type="checkbox" checked="{{ todo.complete }}" data-index="{{ i }}">
+                {% if todo.complete %}
+                    <s>{{ todo.text }}</s>
+                {% else %}
+                    {{ todo.text }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ol>
+    <form>
+        <input type="text">
+        <button type="submit">Add #{{ todos.length }}</button>
+    </form>
 </script>
-<div data-monkberry="app">
-    <component name="world"></component>
-    <p>This is {{ name || 'noname' }}.</p>
-</div>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var view = Monkberry.getView('app');
-        view.update({name: 'Anton'});
-    });
+    document.addEventListener('DOMContentLoaded', load);
+
+    function load() {
+        let state = {
+            todos: [
+                {text: 'do something', complete: true},
+                {text: 'do something more', complete: true},
+                {text: 'relax', complete: false}
+            ]
+        };
+
+        var view = Monkberry.render(todos, document.body);
+        var input = view.querySelector('input');
+
+        view.update(state);
+
+        view.on('submit', 'form', function (event) {
+            event.preventDefault();
+            state.todos.push({text: input.value, complete: false});
+            view.update(state);
+            input.value = '';
+        });
+
+        view.on('click', '[data-index]', function (event) {
+            var i = event.target.dataset.index;
+            state.todos[i].complete = !state.todos[i].complete;
+            view.update(state);
+        });
+    }
 </script>
 </body>
 </html>

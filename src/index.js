@@ -1,4 +1,5 @@
 import Monkberry from 'monkberry';
+import 'monkberry-events';
 import { Compiler } from 'monkberry/lib/index';
 import convert from 'convert-source-map';
 
