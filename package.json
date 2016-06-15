@@ -30,6 +30,7 @@
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "convert-source-map": "^1.2.0",
+    "core-js": "^2.4.0",
     "monkberry": "*",
     "monkberry-events": "*",
     "webpack": "^1.13.1"

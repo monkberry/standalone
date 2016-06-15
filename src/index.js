@@ -1,3 +1,4 @@
+import './polyfill';
 import Monkberry from 'monkberry';
 import 'monkberry-events';
 import { Compiler } from 'monkberry/lib/index';
