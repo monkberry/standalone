@@ -13,8 +13,15 @@ const compiler = new Compiler({asModule: false});
 let views = {};
 
 function compile(name, template) {
-  let sourceNode = compiler.compile(name, template);
-  let output = sourceNode.toStringWithSourceMap();
+  let output;
+
+  try {
+    let sourceNode = compiler.compile(name, template);
+    output = sourceNode.toStringWithSourceMap();
+  } catch (e) {
+    console.error(e.message);
+    return;
+  }
 
   output.map.setSourceContent(name, template);
 
