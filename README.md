@@ -4,7 +4,7 @@ Standalone build of Monkberry for use in browsers.
 ## CDN
 
 ```
-https://cdn.jsdelivr.net/monkberry-standalone/latest/monkberry.min.js
+https://cdn.jsdelivr.net/npm/monkberry-standalone@latest/monkberry.min.js
 ```
 [other versions on jsDelivr](https://www.jsdelivr.com/projects/monkberry-standalone)
 
@@ -13,7 +13,7 @@ https://cdn.jsdelivr.net/monkberry-standalone/latest/monkberry.min.js
 Include it to your page.
 
 ```html
-<script src="https://cdn.jsdelivr.net/monkberry-standalone/latest/monkberry.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/monkberry-standalone@latest/monkberry.min.js"></script>
 ```
 
 Define template with `text/monkberry`.
